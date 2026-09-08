@@ -1,0 +1,82 @@
+{
+	"name": "SQL_To_ALDS_CopyData",
+	"properties": {
+		"activities": [
+			{
+				"name": "Local_SQL_To_ADLS",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "PreserveHierarchy"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_SQL_To_ADLS",
+						"type": "DatasetReference",
+						"parameters": {
+							"Source_Schema": {
+								"value": "@pipeline().parameters.Source_Schema",
+								"type": "Expression"
+							},
+							"Source_Table_Name": {
+								"value": "@pipeline().parameters.Source_Table_Name",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_SQL_To_ADLS_Sink",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"Source_Schema": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"Source_Table_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-08-17T14:36:50Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

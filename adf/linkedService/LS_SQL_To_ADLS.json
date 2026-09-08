@@ -1,0 +1,25 @@
+{
+	"name": "LS_SQL_To_ADLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "localhost",
+			"database": "DataEngineering",
+			"encrypt": "True",
+			"trustServerCertificate": true,
+			"authenticationType": "Windows",
+			"userName": "DESKTOP-DS1DLSS\\dell",
+			"integratedSecurity": "True",
+			"pooling": "False",
+			"multipleActiveResultSets": "False",
+			"commandTimeout": "0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1ZDMwMTY0Zi05ZDNhLTRlOTEtYTBiMy04NWU3ZmNhYTUyZGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SHIRDElearning",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

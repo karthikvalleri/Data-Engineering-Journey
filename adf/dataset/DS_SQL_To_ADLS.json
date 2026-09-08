@@ -1,0 +1,65 @@
+{
+	"name": "DS_SQL_To_ADLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_To_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Source_Schema": {
+				"type": "String",
+				"defaultValue": "dbo"
+			},
+			"Source_Table_Name": {
+				"type": "String",
+				"defaultValue": "Employees"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EmployeeID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Department",
+				"type": "varchar"
+			},
+			{
+				"name": "Salary",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "JoiningDate",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().Source_Schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Source_Table_Name",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
