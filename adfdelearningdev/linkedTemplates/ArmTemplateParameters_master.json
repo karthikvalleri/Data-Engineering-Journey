@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdelearningdev"
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LS_SQL_To_ADLS_password": {
+			"value": ""
+		},
+		"LS_SQL_To_ADLS_Sink_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "de-admin-azure-sql.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "de-admin-azure-sql"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "de-admin-azure-sql"
+		},
+		"LS_SQL_To_ADLS_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"LS_SQL_To_ADLS_properties_typeProperties_database": {
+			"value": "DataEngineering"
+		},
+		"LS_SQL_To_ADLS_properties_typeProperties_userName": {
+			"value": "DESKTOP-DS1DLSS\\dell"
+		},
+		"LS_SQL_To_ADLS_Sink_properties_typeProperties_url": {
+			"value": "https://stdelearningadfdev.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
