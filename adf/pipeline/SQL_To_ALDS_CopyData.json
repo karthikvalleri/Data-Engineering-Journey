@@ -72,7 +72,8 @@
 				"defaultValue": "dbo"
 			},
 			"Source_Table_Name": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "employees"
 			}
 		},
 		"annotations": [],
